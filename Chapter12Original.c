@@ -1,5 +1,5 @@
 /********************************************************
- * ExOriginal -- Datos. *
+ * ExOriginal -- Datos personales. *
  * Not an especially earth-shattering program. *
  * *
  * Author: Israel Prado. *
