@@ -1,30 +1,37 @@
-#include<stdio.h>
-char prueba[1000];
-char prueba2[1000];
-int main() 
+/********************************************************
+ * Ex05 -- El mayor. *
+ * Not an especially earth-shattering program. *
+ * *
+ * Author: Israel Prado. *
+ * *
+ * Purpose: Usando una funcion, saber cual es el numero mas grande. *
+ * *
+ * Usage: *
+ * Mete en la programacion original los datos que deseas*
+ * Restrictions* Solamente puede ser ejecutado, no podras registrar las variables que tu necesitas a menos que lo hagas en el archivo central
+ ********************************************************/
+#include <stdio.h>
+
+int r(int *array, int xd); //las variables a usar y para pasar al siguiente bloque
+
+int main()
 {
-    int m;
-    int pos = 1;
-    int xd; //declaro las variables a usar
-    printf("dame tamaño de array\n");
-    fgets(prueba,sizeof(prueba),stdin);
-    sscanf(prueba,"%d",&xd); //pido el tamaño del array a usar
-    int v[xd]; //meto la variable dentro del lugar 
-    printf("dame los numeros del array\n");
-    for(int i=0;i<xd;i++){
-      fgets(prueba,sizeof(prueba),stdin);
-      sscanf(prueba,"%d",&v[i]);
-            //scanf("%i",&v[i]); //escaneo en un for cada variable definida y las guardo en el array
-    }
-    m = v[0];  //voy a guardar mi variable en esa condicion m
-    for(int i = 1; i < xd; ++i) //nuevamente hago el escaneo variable por variable
-    {
-        if(v[i] > m) //si es mas grande que el nuemro que tiene M
-        {
-            m = v[i]; //ahora se guarda en la posicion como el mayor
-            pos = i; //ubico la posicion de ese numero
-        }
-    }
-    printf("el numero mas grande es %d y esta en la pocision %d\n", m, pos+1); //imprimo resultado
-    return 0;
+	int NZ[8] = {2,14,6,3,9,4,7,19};  //cuantos numeros vamos a usar asi como los valores 
+	
+	printf("tu numero mas grande de tu arreglo es el %d\n", r(NZ, 8)); //se imprime el mayor dado n numeros
+
+	return 0;
+}
+
+int r(int *array, int xd) //dado las variables de arriba, tambien entran estas mismas aqui
+{
+	int r = 0; //Inicializo al maximo con 0
+	int i; 
+
+	for (i = 0; i < xd; ++i) {
+		if (array[i] > r) //si el valor siguiente es mayor al valor actual
+			r = array[i]; //se guarda
+	}
+
+	return r; //regresamos la variable definida
 }
