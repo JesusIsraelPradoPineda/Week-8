@@ -1,3 +1,14 @@
+/********************************************************
+ * Ex05 -- El mayor. *
+ * Not an especially earth-shattering program. *
+ * *
+ * Author: Israel Prado. *
+ * *
+ * Purpose: Usando una funcion, saber cuantas letras tengo. *
+ * *
+ * Usage: *
+ * Mete el texto que necesites*
+ ********************************************************/
 #include <stdio.h>
 #include <string.h>
 int main(void) {
